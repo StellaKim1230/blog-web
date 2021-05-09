@@ -1,8 +1,8 @@
 import React from 'react'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import gql from 'graphql-tag'
-import client from '../lib/apollo-client'
-import GitHub from '../components/GitHub'
+import GitHub from '../../components/GitHub'
+import client from '../../lib/apollo-client'
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await client.query({
