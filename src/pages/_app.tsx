@@ -1,7 +1,7 @@
 import React from 'react'
 import type { AppProps } from 'next/app'
 import { ApolloProvider } from '@apollo/client'
-import client from '../lib/apollo-client'
+import client from '../../lib/apollo-client'
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
