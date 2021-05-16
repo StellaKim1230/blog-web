@@ -2,6 +2,7 @@ import React from 'react'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import gql from 'graphql-tag'
 import client from '../lib/apollo-client'
+import GitHub from '../components/GitHub'
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await client.query({
@@ -18,16 +19,17 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      data: data,
+      owner: data,
     },
   }
 }
 
-const Home = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home = ({ owner }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
-      <img src={data.repositoryOwner.avatarUrl} alt="avatar" />
-      <span>{data.repositoryOwner.login}의 git report</span>
+      <img src={owner.repositoryOwner.avatarUrl} alt="avatar" />
+      <span>{owner.repositoryOwner.login}의 git report</span>
+      <GitHub owner={owner.repositoryOwner.login} name={'wiki-blog'} />
     </>
   )
 }
