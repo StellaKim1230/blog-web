@@ -1,13 +1,14 @@
 {
-  "name": "learn-starter",
-  "version": "0.1.0",
+  "name": "blog-web",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "yarn workspace webapp dev",
+    "build": "yarn workspace webapp build",
     "generate": "graphql-codegen --config codegen.yml",
-    "storybook": "start-storybook -p 6006"
+    "storybook": "yarn workspace webapp storybook"
   },
   "dependencies": {
     "@apollo/client": "^3.3.11",

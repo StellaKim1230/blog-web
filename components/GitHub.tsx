@@ -39,15 +39,15 @@ const GET_REPOSITORY_QUERY = gql`
   }
 `
 
-interface Props {
-  owner: string
-  name: string
-}
+// interface Props {
+//   owner: string
+//   name: string
+// }
 
-const GitHub = ({ owner, name }: Props) => {
-  const { loading, error, data } = useGetRepositoryQuery({
-    variables: { owner, name },
-  })
+const GitHub = () => {
+  // const { loading, error, data } = useGetRepositoryQuery({
+  //   variables: { owner, name },
+  // })
   return <>test</>
 }
 
